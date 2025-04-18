@@ -33,7 +33,7 @@ function App() {
     }
   };
 
-  const fetchWeatherByLocation = useCallback(async (lat: number, lon: number) => {
+  const fetchWeatherByLocation = useCallback(async (lat, lon) => {
     try {
       setError('');
       const response = await fetch(
