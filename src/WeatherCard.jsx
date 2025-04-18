@@ -1,27 +1,8 @@
 import React from 'react';
 import { Wind, Droplets, Sun, Thermometer } from 'lucide-react';
 
-interface WeatherCardProps {
-  weather: {
-    name: string;
-    main: {
-      temp: number;
-      feels_like: number;
-      humidity: number;
-    };
-    wind: {
-      speed: number;
-    };
-    weather: Array<{
-      description: string;
-      icon: string;
-    }>;
-  };
-  unit: string;
-}
-
-const WeatherCard: React.FC<WeatherCardProps> = ({ weather, unit }) => {
-  const formatTemp = (temp: number) => Math.round(temp);
+const WeatherCard = ({ weather, unit }) => {
+  const formatTemp = (temp) => Math.round(temp);
   const formatDate = () => {
     return new Date().toLocaleDateString('en-US', {
       weekday: 'long',
